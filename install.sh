@@ -8,10 +8,10 @@ set -e
 echo "CalyxOS Huron Bootstrap"
 echo "======================="
 
-# Install git
-echo "Installing git..."
+# Install git and curl (curl is needed for the other scripts to properly work)
+echo "Installing dependencies..."
 sudo apt update
-sudo apt install -y git
+sudo apt install -y git curl
 
 # Clone repo
 echo "Cloning CalyxOS repository..."
