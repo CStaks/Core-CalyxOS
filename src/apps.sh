@@ -26,7 +26,10 @@ echo "Installing KDE Plasma..."
 sudo apt install -y kde-plasma-desktop
 
 # Add Brave repo (+100000 aura)
-curl https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key add -
+echo "Adding Brave repository..."
+curl -fsSL https://brave-browser-apt-release.s3.brave.com/brave-core.asc -o /tmp/brave-key.asc
+sudo apt-key add /tmp/brave-key.asc
+rm /tmp/brave-key.asc
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
 
