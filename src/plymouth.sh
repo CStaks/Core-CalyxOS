@@ -6,16 +6,16 @@ echo "Installing Plymouth boot splash..."
 
 sudo apt install -y plymouth plymouth-themes
 
-# Create CalyxOS Plymouth theme directory
+# create CalyxOS Plymouth theme directory
 THEME_DIR="/usr/share/plymouth/themes/calyxos"
 sudo mkdir -p "$THEME_DIR"
 
-# Copy splash image from src/assets
+# copy splash image from src/assets
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 sudo cp "$SCRIPT_DIR/../src/assets/huron-splash.jpg" "$THEME_DIR/splash.png"
 
-# Create theme.properties
-sudo tee "$THEME_DIR/theme.properties" > /dev/null << 'EOF'
+# Create calyxos.plymouth
+sudo tee "$THEME_DIR/calyxos.plymouth" > /dev/null << 'EOF'
 [Plymouth Theme]
 Name=CalyxOS
 Description=CalyxOS Huron
@@ -26,7 +26,7 @@ ImageDir=/usr/share/plymouth/themes/calyxos
 ScriptFile=/usr/share/plymouth/themes/calyxos/calyxos.script
 EOF
 
-# make script to display static image
+# Create calyxos.script to display static image
 sudo tee "$THEME_DIR/calyxos.script" > /dev/null << 'EOF'
 Window.SetBackgroundTopColor(0, 0, 0);
 Window.SetBackgroundBottomColor(0, 0, 0);
