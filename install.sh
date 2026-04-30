@@ -7,10 +7,11 @@ set -e
 
 echo "CalyxOS Huron Bootstrap"
 echo "======================="
+while true; do sudo -n true; sleep 60; kill -0 $$ 2>/dev/null || exit; done &
 
 # Install git and curl (curl is needed for the other scripts to properly work)
 echo "Installing dependencies..."
-sudo apt update
+sudo apt update -y
 sudo apt install -y git curl gnupg
 
 # Clone repo
