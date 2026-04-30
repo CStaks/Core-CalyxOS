@@ -18,6 +18,11 @@ echo "Cloning CalyxOS repository..."
 git clone https://github.com/CStaks/Core-CalyxOS.git
 cd Core-CalyxOS
 
+# Make scripts executable
+echo "Setting up scripts..."
+chmod +x setup.sh
+chmod +x src/*.sh
+
 # Run setup
 echo "Running CalyxOS setup..."
-sudo ./setup.sh
+sudo bash ./setup.sh
