@@ -5,11 +5,15 @@ set -e
 echo "========================================"
 echo "  CalyxOS Huron Setup"
 echo "========================================"
+echo ""
+
+# asks for sudo password once so user doesnt need to continue inputting it
+sudo -v
+
+# Keep sudo alive during installation
+while true; do sudo -n true; sleep 60; kill -0 $$ 2>/dev/null || exit; done &
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-# just incase make all scripts executable
-chmod +x "$SCRIPT_DIR/src/"*.sh
 
 # Run setup modules from src/
 echo ""
@@ -36,8 +40,7 @@ echo ""
 echo "========================================"
 echo "  CalyxOS Huron setup complete!"
 echo "========================================"
-echo ""
-echo "thank you for using Calyx"
+echo "New users will inherit CalyxOS defaults."
 echo ""
 echo "Rebooting in 5 seconds... (Ctrl+C to cancel)"
 sleep 5
