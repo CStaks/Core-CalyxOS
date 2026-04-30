@@ -8,6 +8,9 @@ echo "========================================"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# just incase make all scripts executable
+chmod +x "$SCRIPT_DIR/src/"*.sh
+
 # Run setup modules from src/
 echo ""
 echo "[1/5] Installing applications..."
