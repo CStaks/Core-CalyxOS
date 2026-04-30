@@ -1,3 +1,9 @@
+wallpaper photo by https://wallpapercat.com/users/adriel55
+
+theme from https://github.com/PapirusDevelopmentTeam/materia-kde
+
+
+
 note to the developer: for any website that you may create for this project, perferably keep the theme of https://cstaks.github.io/ and make sure to use /docs/.
 
 discord webhook workflow: follow the steps in order to make the discord webhook functional
