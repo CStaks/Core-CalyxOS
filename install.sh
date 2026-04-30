@@ -11,7 +11,7 @@ echo "======================="
 # Install git and curl (curl is needed for the other scripts to properly work)
 echo "Installing dependencies..."
 sudo apt update
-sudo apt install -y git curl
+sudo apt install -y git curl gnupg
 
 # Clone repo
 echo "Cloning CalyxOS repository..."
