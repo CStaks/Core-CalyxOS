@@ -9,8 +9,9 @@ sudo tee /etc/calyx-release > /dev/null << 'EOF'
 CalyxOS 1.0 (Huron)
 EOF
 
-# Download and set wallpaper system-wide
+# wallpaper setup (aura)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 sudo mkdir -p /usr/share/backgrounds/calyxos
-sudo wget -O /usr/share/backgrounds/calyxos/huron.jpg "https://github.com/CStaks/Core-CalyxOS/raw/main/src/assets/huron.jpg"
+sudo cp "$SCRIPT_DIR/../src/assets/huron.jpg" /usr/share/backgrounds/calyxos/huron.jpg
 
-echo "✓ Branding set"
+echo "Branding set"
